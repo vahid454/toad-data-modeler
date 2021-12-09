@@ -1,1 +1,1 @@
-# toad-data-modeler
+# database-designing-tool

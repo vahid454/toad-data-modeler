@@ -1,0 +1,15 @@
+<database architecture="MySQL" connectionString="jdbc:mysql://localhost:3306/dmodeler" username="root" password="saksham@2105" driver="com.mysql.jdbc.Driver" />
+<entity class="com.thinking.machines.DataModeler.dl.DatabaseArchitecture" />
+<entity class="com.thinking.machines.DataModeler.dl.MemberAddress" />
+<entity class="com.thinking.machines.DataModeler.dl.DatabaseTable" />
+<entity class="com.thinking.machines.DataModeler.dl.Project" />
+<entity class="com.thinking.machines.DataModeler.dl.DatabaseEngine" />
+<entity class="com.thinking.machines.DataModeler.dl.MemberSubscription" />
+<entity class="com.thinking.machines.DataModeler.dl.SubscriptionPlan" />
+<entity class="com.thinking.machines.DataModeler.dl.DatabaseArchitectureDataType" />
+<entity class="com.thinking.machines.DataModeler.dl.Administrator" />
+<entity class="com.thinking.machines.DataModeler.dl.MemberVertificationToken" />
+<entity class="com.thinking.machines.DataModeler.dl.Member" />
+<entity class="com.thinking.machines.DataModeler.dl.DatabaseTableField" />
+<entity class="com.thinking.machines.DataModeler.dl.DatabaseTableRelationshipKey" />
+<entity class="com.thinking.machines.DataModeler.dl.DatabaseTableRelationship" />

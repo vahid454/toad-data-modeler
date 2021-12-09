@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>SB Admin - Register</title>
+<!-- Bootstrap core CSS-->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom fonts for this template-->
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<!-- Custom styles for this template-->
+<link href="css/sb-admin.css" rel="stylesheet">
+<link href="site/css/styles.css" rel="stylesheet">
+<script>
+function attachEvents()
+{
+var installationForm=$("#installationForm");
+var databaseServer=installationForm.find("#databaseServer");
+databaseServer.on("input",function(){
+if(databaseServer.val().trim()) databaseServer.removeClass("is-invalid");
+else databaseServer.addClass("is-invalid");
+
+});
+}
+function processInstallationForm()
+{
+var installationForm=$("#installationForm");
+var databaseServer=installationForm.find("#databaseServer");
+var errors=0;
+if(!databaseServer.val().trim())
+{
+databaseServer.addClass("is-invalid");
+errors++;
+databaseServer.focus();
+}
+else
+{
+databaseServer.removeClass("is-invalid");
+}
+// see to it that this should happen only once:-->  attachEvents();
+/*waitingDialog.show("Processing");
+w1=waitingDialog.animate("Processing");
+setTimeout(function(){
+waitingDialog.stopAnimate(w1);
+waitingDialog.message("ruk na");
+}
+,2000);*/
+}
+</script>
+</head>
+<body class="bg-dark">
+<div id="logo-container" class="col-md-4 col-md-offset-1">
+    <img src="images/logo.png" class="img-responsive" alt="LOGO">
+</div>
+<div class="container">
+<div class="card card-register mx-auto mt-5">
+<div class="card-header">Installer</div>
+<div class="card-body">
+<form id='installationForm' novalidate>
+<!-- MySQL Database Card Starts here -->
+<div class="card card-register mx-auto mt-1">
+<div class="card-header">MySQL Database</div>
+<div class="card-body">
+
+<div class='form-group has-error' id='databaseServerGroup'>
+<div class='form-row'>
+<div class='col-md-9'>
+<div class='form-label-group'>
+<input type='text' id='databaseServer' class='form-control' placeholder='Server ip' required='required' autofocus='autofocus'>
+<label for='databaseServer'>Server ip</label>
+<div class="invalid-feedback">Please choose a username.</div>
+</div>
+</div>
+<div class='col-md-3'>
+<div class='form-label-group'>
+<input type='number' id='portNumber' class='form-control' placeholder='Port number' required='required' min='1' max='65535' value='3306'>
+<label for='portNumber'>Port number</label>
+</div>
+</div>
+</div>
+</div>
+<div class='form-group'>
+<div class='form-row'>
+<div class='col-md-6'>
+<div class='form-label-group'>
+<input type='text' id='databaseUsername' placeholder='Database user' required='required' class='form-control'>
+<label for='databaseUsername'>Username</label>
+</div>
+</div>
+<div class='col-md-6'>
+<div class='form-label-group'>
+<input type='text' id='databasePassword' placeholder='Password' required='required' class='form-control'>
+<label for='databasePassword'>Password</label>
+</div>
+</div>
+</div>
+</div>
+<div class='form-group'>
+<div class='form-label-group'>
+<input type='text' id='databaseName' placeholder='Name of database' required='required' class='form-control'>
+<label for='databaseName'>Name of database</label>
+</div>
+</div>
+
+</div> <!-- card body -->
+</div> <!-- card -->
+<!-- MySQL Database Card starts here -->
+<!-- Administrator Card Starts here -->
+<div class="card card-register mx-auto mt-1">
+<div class="card-header">Administrator</div>
+<div class="card-body">
+<div class='form-group'>
+<div class='form-row'>
+<div class='col-md-6'>
+<div class='form-label-group'>
+<input type='text' id='username' placeholder='Username' required='required' class='form-control'>
+<label for='username'>Username</label>
+</div>
+</div>
+<div class='col-md-6'>
+<div class='form-label-group'>
+<input type='text' id='password' placeholder='Password' required='required' class='form-control'>
+<label for='password'>Password</label>
+</div>
+</div>
+</div>
+</div>
+
+</div> <!-- card-body -->
+</div> <!-- card -->
+<!-- Administrator Card Ends here -->
+<!-- Mail Server Card Starts here -->
+<div class='card card-register mx-auto mt-1'>
+<div class='card-header'>Mail Server</div>
+<div class='card-body'>
+<div class='form-group'>
+<div class='form-label-group'>
+<input type='text' id='smtpServer' placeholder='SMTP Server' required='required' class='form-control'>
+<label for='smtpServer'>SMTP Server</label>
+</div>
+</div>
+<div class='form-group'>
+<div class='form-row'>
+<div class='col-md-6'>
+<div class='form-label-group'>
+<input type='email' id='mailID' placeholder='email' required='required' class='form-control'>
+<label for='email'>email</label>
+</div>
+</div>
+<div class='col-md-6'>
+<div class='form-label-group'>
+<input type='mailPassword' id='mailID' placeholder='password' required='required' class='form-control'>
+<label for='mailPassword'>password</label>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+<!-- Mail Server Card Ends here -->
+<!-- Security Card Starts here -->
+<div class='card card-register mx-auto mt-1'>
+<div class='card-header'>Input security</div>
+<div class='card-body'>
+<div class='form-group'>
+<div class='form-row'>
+<div class='col-md-6'>
+<img src='webservice/captcha' />
+</div>
+<div class='col-md-6'>
+<div class='form-label-group'>
+<input type='text' id='captchaCode' placeholder='CAPTCHA' required='required' class='form-control'>
+<label for='captchaCode'>CAPTCHA</label>
+</div>
+</div>
+</div>
+</div>
+</div> <!-- card body -->
+</div> <!-- card -->
+<!-- Security Card Ends here -->
+<button type='button' onclick='processInstallationForm()' class="btn btn-primary btn-block">Install</button>
+</form>
+</div>
+</div>
+</div>
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- waiting for plugin -->
+<script src="vendor/waiting/bootstrap-waitingfor.js"></script>
+</body>
+</html>

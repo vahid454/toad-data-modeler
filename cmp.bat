@@ -1,0 +1,1 @@
+javac -classpath c:\tomcat8\lib\*;c:\tomcat8\webapps\tmdModel\WEB-INF\classes;c:\tomcat8\webapps\tmdModel\WEB-INF\lib\*;. *.java
